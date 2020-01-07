@@ -4,16 +4,15 @@ public class Angle {
     private int degrees;
 
     public Angle(int degrees) {
-        if (degrees < 0) {
-           while (degrees < 0) {
-               degrees += 360;
-           }
-        }
-        setDegrees(degrees);
+       setDegrees(degrees);
         }
 
     public int getDegrees() {
-        return degrees;
+        int d;
+        d = degrees % 360;
+        if (d < 0) {
+            d += 360;
+        } return d;
     }
     private void setDegrees(int degrees) {
         this.degrees=degrees;
