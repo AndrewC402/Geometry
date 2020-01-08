@@ -4,6 +4,9 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class PersonTest {
@@ -29,6 +32,17 @@ class PersonTest {
         assertFalse(fred1.equals(jane),"fred1 is not jane");
         assertFalse(fred2.equals(jane),"fred2 is not jane");
         
+    }
+
+    @Test
+    public void does_the_list_contain_a_certain_person() {
+        List<Person> people = new ArrayList<>();
+        people.add(bill);
+        people.add(fred1);
+        people.add(fred2);
+        people.add(jane);
+
+        assertTrue(people.contains(fred2),"fred is in the list");
     }
 
 }
